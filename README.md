@@ -18,6 +18,8 @@ Create and activate the virtual environment
 
 Ensure that all the requirements listed in requirements.txt are installed.
 
+``pip3 install -r requirements.txt``
+
 Start server by using:
 
 ``python3 main.py``
