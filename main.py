@@ -13,17 +13,17 @@ app = Flask(__name__, template_folder='templates')
 def index():
     cursor, connection = util.connect_db(username, pwd, host, port, db)
 
-    cursor.execute('INSERT INTO basket_a (a, fruit_a)\nVALUES\n(5, \'cherry\');')
-    record = util.run_sql(cursor, 'SELECT * FROM basket_a')
+    cursor.execute('INSERT INTO basket_a (a, fruit_a)\nVALUES\n(5, \'Cherry\');')
+    record = util.run_sql(cursor, 'SELECT fruit_a FROM basket_a\nUNION\nSELECT fruit_b FROM basket_b;')
     if record == -1:
         return "Error with the SQL command."
     else:
         col_names = [desc[0] for desc in cursor.description]
-        log = record[:5]
+        log = record[:]
 
     util.disconnect_db(connection, cursor)
-
-    return record
+    
+    return log
 
 
 if __name__ == '__main__':
