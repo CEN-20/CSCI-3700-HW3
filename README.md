@@ -9,3 +9,15 @@ See Requirements.txt
 Install the Pytohn3 Virtual environment
 
 ``sudo apt-get install python3-venv``
+
+Create and activate the virtual environment
+
+``python3 -m venv python_venv``
+
+``source python_venv/bin/activate``
+
+Ensure that all the requirements listed in requirements.txt are installed.
+
+Start server by using:
+
+``python3 main.py``
